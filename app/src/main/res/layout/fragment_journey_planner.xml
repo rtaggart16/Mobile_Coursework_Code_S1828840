@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Name: Ross Taggart -->
+<!-- ID: S1828840 -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.journey_planner.JourneyPlannerFragment">
+
+    <LinearLayout
+        android:id="@+id/J_P_Query_View"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/J_P_Destination_Display">
+            <fragment android:id="@+id/start_autocomplete"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+                />
+
+            <fragment android:id="@+id/end_autocomplete"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/J_P_Date_Filter"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Travel Date"
+                android:id="@+id/J_P_Date_Display"
+                android:layout_weight="1">
+
+            </TextView>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Choose Date"
+                android:drawableRight="@drawable/ic_today_black_24dp"
+                android:onClick="showDatePickerDialog"
+                android:id="@+id/J_P_Date_Picker_Btn"
+                android:layout_weight="1">
+
+            </Button>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:id="@+id/J_P_Submit_Btn"
+                android:layout_weight="1">
+
+            </Button>
+        </LinearLayout>
+
+    </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:visibility="invisible"
+            android:id="@+id/J_P_Map_View">
+            <ProgressBar
+                android:id="@+id/J_P_Progress"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible"
+                android:id="@+id/J_P_Result_View">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:id="@+id/J_P_Map_Display">
+                    <com.google.android.gms.maps.MapView
+                        android:layout_height="match_parent"
+                        android:id="@+id/J_P_Map"
+                        android:name="com.google.android.gms.maps.MapView"
+                        android:layout_width="match_parent"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_below="@+id/J_P_Map_Display">
+                    <ExpandableListView
+                        android:id="@+id/J_P_List_Result"
+                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"/>
+                </LinearLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    <!--<LinearLayout
+        android:id="@+id/J_P_Test"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Start">
+        </EditText>
+    </LinearLayout>-->
+
+</RelativeLayout>

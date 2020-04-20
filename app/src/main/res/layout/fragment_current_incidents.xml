@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Name: Ross Taggart -->
+<!-- ID: S1828840 -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    tools:context=".ui.current_incidents.CurrentIncidentsFragment">
+
+    <LinearLayout
+        android:id="@+id/C_I_View_Selector"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/C_I_Map_Btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableRight="@drawable/ic_plot_point_24dp"
+            android:text="Map">
+
+        </Button>
+
+        <Button
+            android:id="@+id/C_I_List_Btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableRight="@drawable/ic_list_black_24dp"
+            android:text="List">
+
+        </Button>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/C_I_Progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_below="@id/C_I_View_Selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"/>
+
+    <RelativeLayout
+        android:id="@+id/C_I_Result_Display"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_below="@id/C_I_View_Selector"
+        android:visibility="invisible">
+
+        <LinearLayout
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/C_I_Map"
+                android:name="com.google.android.gms.maps.MapView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="310dp"
+                android:orientation="horizontal">
+
+                <ExpandableListView
+                    android:id="@+id/lvExp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
+

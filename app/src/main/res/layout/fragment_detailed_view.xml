@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Name: Ross Taggart -->
+<!-- ID: S1828840 -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:id="@+id/D_V_Option_Select">
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Road"
+            android:id="@+id/D_V_Road_Input">
+        </EditText>
+
+        <Spinner
+            android:id="@+id/D_V_Select"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:spinnerMode="dropdown"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/D_V_Option_Select"
+        android:id="@+id/D_V_Submit_Button_Display">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Submit"
+            android:textAlignment="center"
+            android:id="@+id/D_V_Submit_Btn">
+        </Button>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/D_V_Progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_below="@id/D_V_Submit_Button_Display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/D_V_Result_View"
+        android:visibility="invisible"
+        android:layout_below="@id/D_V_Submit_Button_Display">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/D_V_View_Selector"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/D_V_Map_Btn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableRight="@drawable/ic_plot_point_24dp"
+                    android:text="Map">
+
+                </Button>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="List"
+                    android:drawableRight="@drawable/ic_list_black_24dp"
+                    android:id="@+id/D_V_List_Btn"
+                    android:layout_weight="1">
+
+                </Button>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_below="@id/D_V_View_Selector"
+                android:id="@+id/D_V_Map_View">
+                <com.google.android.gms.maps.MapView
+                    android:layout_height="match_parent"
+                    android:id="@+id/D_V_Map"
+                    android:name="com.google.android.gms.maps.MapView"
+                    android:layout_width="match_parent"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:id="@+id/D_V_List_View"
+                android:layout_below="@id/D_V_View_Selector"
+                android:visibility="invisible">
+                <ExpandableListView
+                    android:id="@+id/D_V_List_Result"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

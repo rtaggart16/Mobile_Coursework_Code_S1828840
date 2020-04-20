@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Name: Ross Taggart -->
+<!-- ID: S1828840 -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.planned_roadworks.PlannedRoadworksFragment">
+
+    <LinearLayout
+        android:id="@+id/P_R_Date_Filter"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="All Roadworks"
+            android:id="@+id/P_R_Date_Display"
+            android:layout_weight="1">
+
+        </TextView>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Filter Dates"
+            android:drawableRight="@drawable/ic_today_black_24dp"
+            android:onClick="showDatePickerDialog"
+            android:id="@+id/P_R_Date_Picker_Btn"
+            android:layout_weight="1">
+
+        </Button>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/P_R_Progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_below="@id/P_R_Date_Filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/P_R_Date_Filter"
+        android:id="@+id/P_R_Result_Display"
+        android:visibility="invisible">
+
+        <com.google.android.gms.maps.MapView
+            android:layout_height="match_parent"
+            android:id="@+id/P_R_Map"
+            android:name="com.google.android.gms.maps.MapView"
+            android:layout_width="0dp"
+            android:layout_weight="1"/>
+
+        <ExpandableListView
+            android:id="@+id/lvExp"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+</RelativeLayout>

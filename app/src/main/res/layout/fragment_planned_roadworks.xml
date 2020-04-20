@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Name: Ross Taggart -->
+<!-- ID: S1828840 -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.planned_roadworks.PlannedRoadworksFragment">
+
+    <LinearLayout
+        android:id="@+id/P_R_Date_Filter"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="All Roadworks"
+            android:id="@+id/P_R_Date_Display"
+            android:layout_weight="1">
+
+        </TextView>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Filter Dates"
+            android:drawableRight="@drawable/ic_today_black_24dp"
+            android:onClick="showDatePickerDialog"
+            android:id="@+id/P_R_Date_Picker_Btn"
+            android:layout_weight="1">
+
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/P_R_View_Selector"
+        android:layout_below="@id/P_R_Date_Filter"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/P_R_Map_Btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableRight="@drawable/ic_plot_point_24dp"
+            android:text="Map">
+
+        </Button>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="List"
+            android:drawableRight="@drawable/ic_list_black_24dp"
+            android:id="@+id/P_R_List_Btn"
+            android:layout_weight="1">
+
+        </Button>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/P_R_Progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_below="@id/P_R_View_Selector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="310dp"
+        android:layout_below="@+id/P_R_View_Selector"
+        android:id="@+id/P_R_Result_Display"
+        android:visibility="invisible">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/mapView"
+            android:orientation="horizontal">
+
+            <com.google.android.gms.maps.MapView
+                android:layout_height="match_parent"
+                android:id="@+id/P_R_Map"
+                android:name="com.google.android.gms.maps.MapView"
+                android:layout_width="match_parent"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listView"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/P_R_Duration_Btns"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/P_R_Short_Btn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#C966F400"
+                    android:text="Short - 5 days">
+                </Button>
+
+                <Button
+                    android:id="@+id/P_R_Medium_Btn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#DC8807"
+                    android:text="Medium - 10 days">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/P_R_Long_Btn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#F61111"
+                    android:text="Long - 15 days">
+
+                </Button>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:orientation="horizontal"
+                android:layout_below="@id/P_R_Duration_Btns">
+
+                <ExpandableListView
+                    android:id="@+id/lvExp"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Name: Ross Taggart -->
+<!-- ID: S1828840 -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:id="@+id/D_V_Option_Select">
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Road"
+            android:id="@+id/D_V_Road_Input">
+        </EditText>
+
+        <Spinner
+            android:id="@+id/D_V_Select"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:spinnerMode="dropdown"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Submit"
+            android:textAlignment="center"
+            android:id="@+id/D_V_Submit_Btn">
+        </Button>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/D_V_Progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_below="@id/D_V_Option_Select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:id="@+id/D_V_Result_View"
+        android:visibility="invisible"
+        android:layout_below="@id/D_V_Option_Select">
+
+        <com.google.android.gms.maps.MapView
+            android:layout_height="match_parent"
+            android:id="@+id/D_V_Map"
+            android:name="com.google.android.gms.maps.MapView"
+            android:layout_width="0dp"
+            android:layout_weight="1"/>
+
+        <ExpandableListView
+            android:id="@+id/D_V_List_Result"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

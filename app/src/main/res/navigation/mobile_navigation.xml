@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Name: Ross Taggart -->
+<!-- ID: S1828840 -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_current_incidents">
+
+    <fragment
+        android:id="@+id/navigation_current_incidents"
+        android:name="com.example.s1828840_traffic_scotland.ui.current_incidents.CurrentIncidentsFragment"
+        android:label="Current Incidents"
+        tools:layout="@layout/fragment_current_incidents" />
+
+    <fragment
+        android:id="@+id/navigation_current_roadworks"
+        android:name="com.example.s1828840_traffic_scotland.ui.current_roadworks.CurrentRoadworksFragment"
+        android:label="Current Roadworks"
+        tools:layout="@layout/fragment_current_roadworks" />
+
+    <fragment
+    android:id="@+id/navigation_planned_roadworks"
+    android:name="com.example.s1828840_traffic_scotland.ui.planned_roadworks.PlannedRoadworksFragment"
+    android:label="Planned Roadworks"
+    tools:layout="@layout/fragment_planned_roadworks" />
+
+    <fragment
+        android:id="@+id/navigation_journey_planner"
+        android:name="com.example.s1828840_traffic_scotland.ui.journey_planner.JourneyPlannerFragment"
+        android:label="Journey Planner"
+        tools:layout="@layout/fragment_journey_planner" />
+
+    <fragment
+        android:id="@+id/navigation_detailed_view"
+        android:name="com.example.s1828840_traffic_scotland.ui.detailed_view.DetailedViewFragment"
+        android:label="Detailed View"
+        tools:layout="@layout/fragment_detailed_view" />
+</navigation>

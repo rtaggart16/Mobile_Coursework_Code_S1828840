@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Name: Ross Taggart -->
+<!-- ID: S1828840 -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_current_incidents"
+        android:icon="@drawable/ic_current_incidents_black_24dp"
+        android:title="Current Incidents" />
+
+    <item
+        android:id="@+id/navigation_current_roadworks"
+        android:icon="@drawable/ic_current_roadworks_black_24dp"
+        android:title="Current Roadworks" />
+
+    <item
+        android:id="@+id/navigation_planned_roadworks"
+        android:icon="@drawable/ic_planned_roadworks_black_24dp"
+        android:title="Planned Roadworks" />
+
+    <item
+        android:id="@+id/navigation_journey_planner"
+        android:icon="@drawable/ic_journey_planner_black_24dp"
+        android:title="Journey Planner" />
+
+    <item
+        android:id="@+id/navigation_detailed_view"
+        android:icon="@drawable/ic_detailed_view_black_24dp"
+        android:title="Detailed View" />
+
+</menu>
